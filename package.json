@@ -1,0 +1,52 @@
+{
+  "name": "socialnetwork",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "heroku-prebuild": "npm install && npm install --only=dev && npm run build:prod",
+    "start": "node ./bin/www",
+    "build": "del-cli public/js/app && webpack --config webpack.config.dev.js --progress --profile --watch",
+    "build:prod": "del-cli public/js/app && ngc -p tsconfig.aot.json && ngc -p tsconfig.aot.json && webpack --config webpack.config.prod.js --progress --profile --bail && npm run cleanup",
+    "cleanup": "del-cli public/js/app/**/*.js public/js/app/**/*.js.map !public/js/app/bundle.js !public/js/app/*.chunk.js assets/app/**/*.ngfactory.ts assets/app/**/*.shim.ts assets/app/**/*.ngsummary.json assets/app/**/*.ngstyle.ts"
+  },
+  "dependencies": {
+    "@angular/animations": "^4.0.0",
+    "@angular/common": "^4.0.0",
+    "@angular/compiler": "^4.0.0",
+    "@angular/core": "^4.0.0",
+    "@angular/forms": "^4.0.0",
+    "@angular/http": "^4.0.0",
+    "@angular/platform-browser": "^4.0.0",
+    "@angular/platform-browser-dynamic": "^4.0.0",
+    "@angular/router": "^4.0.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "~1.18.2",
+    "cookie-parser": "~1.4.3",
+    "core-js": "^2.4.1",
+    "debug": "~2.6.9",
+    "express": "~4.15.5",
+    "hbs": "~4.0.1",
+    "jsonwebtoken": "^8.1.0",
+    "mongoose": "^4.13.7",
+    "mongoose-unique-validator": "^1.0.6",
+    "morgan": "~1.9.0",
+    "rxjs": "^5.5.2",
+    "serve-favicon": "~2.4.5",
+    "zone.js": "^0.8.14"
+  },
+  "devDependencies": {
+    "@angular/compiler-cli": "^4.0.0",
+    "@types/core-js": "0.9.36",
+    "@types/node": "~6.0.60",
+    "angular-router-loader": "^0.8.0",
+    "angular2-template-loader": "^0.6.2",
+    "awesome-typescript-loader": "^3.4.1",
+    "del-cli": "^1.1.0",
+    "html-loader": "^0.5.1",
+    "raw-loader": "^0.5.1",
+    "ts-loader": "^3.2.0",
+    "typescript": "^2.6.2",
+    "webpack": "^3.10.0",
+    "webpack-merge": "^4.1.1"
+  }
+}

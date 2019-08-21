@@ -1,0 +1,62 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+  cursor: pointer;
+}
+
+a:hover,
+a:active {
+  color: #00B7FF;
+  text-decoration: underline;
+}
+
+a.danger {
+  color: red;
+}
+
+.spacing {
+  margin-bottom: 20px;
+}
+
+input.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
+
+.row {
+  display: block;
+}
+
+.row-small-margin-top-bottom {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+}
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+  color: #495057;
+  background-color: #fff;
+  border-color: #ddd #ddd #ddd;
+}
+
+body, 
+html {
+  height: 100vh;
+  margin-bottom: 40px;
+}
+
+@media (max-width: 750px) {
+  .row {
+    margin: 0px -20px;
+  }
+}
